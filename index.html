@@ -11,9 +11,17 @@
 
     <script type="text/jsx">
       var MyComponent = React.createClass({
+        getInitialState: function() {
+          return {
+            count: 5
+          }
+        },
         render: function() {
           return (
-            <h1>Hello, {this.props.name}!</h1>
+            <div>
+              <h1>Hello, {this.props.name}!</h1>
+              <p>{this.state.count}</p>
+            </div>
           );
         }
       });
