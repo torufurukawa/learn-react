@@ -13,14 +13,23 @@
       var MyComponent = React.createClass({
         getInitialState: function() {
           return {
-            count: 5
+            count: 0,
+            unit: 'V'
           }
+        },
+        incrementCount: function() {
+          this.setState({
+            count: this.state.count + 1
+          });
         },
         render: function() {
           return (
             <div>
               <h1>Hello, {this.props.name}!</h1>
-              <p>{this.state.count}</p>
+              <p>{this.state.count} {this.state.unit}</p>
+              <button type="button" onClick={this.incrementCount}>
+                Increment
+              </button>
             </div>
           );
         }
